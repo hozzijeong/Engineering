@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.day02">
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <activity android:name="history.Test10_CustomListView"></activity>
+        <activity android:name="history.Test09_Recycler_View" />
+        <activity android:name="history.Test08_ListView_Actiivty" />
+        <activity android:name="history.LoginActivity" />
+        <activity android:name="history.Test07_Handler_Activity" />
+        <activity android:name="history.Test06_Count_Activity" />
+        <activity android:name="history.Test05_Change_Image" />
+        <activity android:name="history.Test04_Frame_Layout" />
+        <activity android:name="history.SplashActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name="history.Test03_Calc" />
+        <activity android:name="history.Test02_Relative_Layout" />
+        <activity android:name="history.Test01_Linear_Layout" />
+        <activity android:name=".MainActivity" />
+    </application>
+
+</manifest>

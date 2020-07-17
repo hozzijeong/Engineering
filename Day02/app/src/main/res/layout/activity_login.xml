@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="history.LoginActivity"
+    android:background="#55C1CF"
+    >
+    <LinearLayout
+        android:id="@+id/login_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_marginTop="200dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        >
+        <EditText
+            android:id="@+id/id_et"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:hint="아이디 입력"
+            android:background="#ffffff"
+            android:paddingLeft="10dp"
+            />
+        <EditText
+            android:id="@+id/pw_et"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_below="@id/id_et"
+            android:hint="비밀번호 입력"
+            android:paddingLeft="10dp"
+            android:background="#ffffff"
+            android:layout_marginTop="10dp"
+            />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:orientation="horizontal"
+            android:weightSum="3"
+            android:gravity="center_vertical"
+            android:layout_marginTop="10dp"
+            >
+            <CheckBox
+                android:id="@+id/auto_login"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:text="자동로그인"
+                android:layout_weight="1"
+                android:textSize="10sp"
+                android:textColor="#ffffff"
+                android:textStyle="bold"
+                android:buttonTint="#ffffff"
+
+                />
+            <Button
+                android:id="@+id/find_info"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:text="아이디/비밀번호 찾기"
+                android:textSize="10sp"
+                android:layout_weight="1"
+
+                />
+            <Button
+                android:id="@+id/join_btn"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:text="회원가입"
+                android:textSize="10sp"
+                />
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/login_btn"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:text="로그인"
+            />
+    </LinearLayout>
+
+
+
+    <LinearLayout
+        android:id="@+id/social_layout"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:orientation="vertical"
+        android:layout_alignStart="@id/login_layout"
+        android:layout_alignEnd="@id/login_layout"
+        android:layout_below="@id/login_layout"
+        android:weightSum="4"
+        android:layout_marginTop="60dp"
+        >
+         <Button
+            android:id="@+id/facebook_btn"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:text="FaceBook 아이디로 로그인"
+            android:background="#3b5998"
+            android:textColor="#ffffff"
+            />
+        <Button
+            android:id="@+id/google_btn"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:text="Google 아이디로 로그인"
+            android:background="#ffffff"
+            android:layout_marginTop="5dp"
+            />
+         <Button
+            android:id="@+id/naver_btn"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:text="Naver 아이디로 로그인"
+            android:textColor="#ffffff"
+            android:background="#2db400"
+             android:layout_marginTop="5dp"
+
+             />
+         <Button
+            android:id="@+id/kakao_btn"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:text="Kakao 아이디로 로그인"
+            android:textColor="#964b00"
+            android:background="#ffe812"
+             android:layout_marginTop="5dp"
+
+             />
+    </LinearLayout>
+
+</RelativeLayout>

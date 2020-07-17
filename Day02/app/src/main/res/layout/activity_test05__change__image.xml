@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    >
+
+    <FrameLayout
+        android:id="@+id/upside_fl"
+        android:layout_above="@id/ch_btn"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ImageView
+            android:id="@+id/upside_iv1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/img1"
+            android:layout_gravity="center"
+            android:layout_centerHorizontal="true"
+            />
+        <ImageView
+            android:id="@+id/upside_iv2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/img2"
+            android:visibility="invisible"
+            android:layout_gravity="center"
+            />
+    </FrameLayout>
+
+
+    <Button
+        android:id="@+id/ch_btn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="change"
+        android:layout_centerVertical="true"
+        />
+
+    <FrameLayout
+        android:id="@+id/downside_fl"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/ch_btn"
+        >
+
+        <ImageView
+            android:id="@+id/downside_iv1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/img1"
+            android:visibility="invisible"
+            android:layout_gravity="center"
+            android:layout_centerHorizontal="true"
+            />
+        <ImageView
+            android:id="@+id/downside_iv2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/img2"
+            android:layout_gravity="center"
+            />
+    </FrameLayout>
+
+
+</RelativeLayout>
