@@ -24,6 +24,10 @@ import history.Test07_Handler_Activity;
 import history.Test08_ListView_Actiivty;
 import history.Test09_Recycler_View;
 import history.Test10_CustomListView;
+import history.Test11_LifeCycle;
+import history.Test12_ListView02;
+import history.Test13_CustomListView02;
+import history.Test14_CustomView03;
 
 public class MainActivity extends BaseActivity implements View.OnClickListener, OnLongClickListener {
     ArrayList<Button> btn_arr = new ArrayList<>();
@@ -85,12 +89,23 @@ public class MainActivity extends BaseActivity implements View.OnClickListener, 
             case R.id. row3_btn2:
                 change_activity(this, Test10_CustomListView.class);
                 break;
-
             case R.id. row3_btn3:
-                change_activity(this, Test08_ListView_Actiivty.class);
+                change_activity(this, Test11_LifeCycle.class);
                 break;
             case R.id. row3_btn4:
-                change_activity(this, Test08_ListView_Actiivty.class);
+                change_activity(this, Test12_ListView02.class);
+                break;
+            case R.id. row4_btn1:
+                change_activity(this, Test13_CustomListView02.class);
+                break;
+            case R.id. row4_btn2:
+                change_activity(this, Test14_CustomView03.class);
+                break;
+            case R.id. row4_btn3:
+                change_activity(this, Test11_LifeCycle.class);
+                break;
+            case R.id. row4_btn4:
+                change_activity(this, Test12_ListView02.class);
                 break;
 
         }

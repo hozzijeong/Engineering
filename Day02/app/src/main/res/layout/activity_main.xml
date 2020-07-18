@@ -90,13 +90,39 @@
                     android:id="@+id/row3_btn3"
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
-                    android:text=""
+                    android:text="LifeCycle"
                     />
                 <Button
                     android:id="@+id/row3_btn4"
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
-                    android:text=""
+                    android:text="ListView2"
+                    />
+            </TableRow>
+            <TableRow
+                android:id="@+id/row4">
+                <Button
+                    android:id="@+id/row4_btn1"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:text="Custom_ListView"/>
+                <Button
+                    android:id="@+id/row4_btn2"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:text="Phone_Book"
+                    />
+                <Button
+                    android:id="@+id/row4_btn3"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:text="LifeCycle"
+                    />
+                <Button
+                    android:id="@+id/row4_btn4"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:text="ListView2"
                     />
             </TableRow>
         </TableLayout>

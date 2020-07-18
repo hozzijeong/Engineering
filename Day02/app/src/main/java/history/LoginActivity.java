@@ -9,6 +9,7 @@ import android.widget.CheckBox;
 import android.widget.EditText;
 
 import com.example.day02.BaseActivity;
+import com.example.day02.MainActivity;
 import com.example.day02.R;
 
 import butterknife.BindView;
@@ -26,16 +27,21 @@ public class LoginActivity extends BaseActivity implements View.OnClickListener{
     @BindView(R.id.facebook_btn) Button facebook;
     @BindView(R.id.naver_btn) Button naver;
     @BindView(R.id.kakao_btn) Button kakao;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
         ButterKnife.bind(this);
+
+        login.setOnClickListener(this);
     }
 
     @Override
     public void onClick(View v) {
-
+        switch (v.getId()){
+            case R.id.login_btn:
+                change_activity(this, MainActivity.class);
+                break;
+        }
     }
 }

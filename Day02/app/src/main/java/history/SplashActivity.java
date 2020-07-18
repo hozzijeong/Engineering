@@ -23,8 +23,7 @@ public class SplashActivity extends BaseActivity {
             public void run() {
                 try {
                     Thread.sleep(2000);
-                    Intent intent = new Intent(context,com.example.day02.MainActivity.class);
-                    startActivity(intent);
+                    change_activity(context,LoginActivity.class);
                     finish();
                 }catch (Exception e){
                     e.printStackTrace();

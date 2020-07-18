@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="80dp"
+    android:orientation="vertical"
+    android:layout_marginTop="10dp"
+    android:padding="10dp"
+    >
+    <TextView
+        android:id="@+id/phone_name_tv"
+        android:layout_width="match_parent"
+        android:layout_height="35dp"
+        android:gravity="center_vertical"
+        android:textSize="25sp"
+        android:layout_toLeftOf="@id/call_iv"
+        />
+    <TextView
+        android:id="@+id/phone_num_tv"
+        android:layout_width="match_parent"
+        android:layout_height="35dp"
+        android:gravity="center_vertical"
+        android:textSize="20sp"
+        android:layout_below="@id/phone_name_tv"
+        android:paddingLeft="20dp"
+        android:layout_alignRight="@id/phone_name_tv"
+        />
+    <ImageButton
+        android:id="@+id/call_iv"
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        android:layout_marginLeft="10dp"
+        android:src="@drawable/ic_call_black_24dp"
+        android:layout_toLeftOf="@id/msg_iv"
+        android:background="#00FFFFFF"
+        />
+    <ImageButton
+        android:id="@+id/msg_iv"
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        android:layout_marginLeft="10dp"
+        android:src="@drawable/ic_textsms_black_24dp"
+        android:layout_alignParentEnd="true"
+        android:background="#00FFFFFF"
+        />
+
+</RelativeLayout>
