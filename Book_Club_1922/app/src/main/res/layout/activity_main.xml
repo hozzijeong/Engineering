@@ -41,4 +41,11 @@
         android:background="#80719A"
         app:menu="@menu/main_bottom_tab"
         />
+
+    <FrameLayout
+        android:id="@+id/create_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="invisible"
+        />
 </RelativeLayout>
