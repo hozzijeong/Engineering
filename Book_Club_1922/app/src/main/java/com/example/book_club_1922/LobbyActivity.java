@@ -11,6 +11,7 @@ import android.os.Handler;
 import android.os.Message;
 import android.view.View;
 import android.widget.Button;
+import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
@@ -20,6 +21,7 @@ import Lobby_Adapter.Guide_Adapter;
 import Lobby_Frgment.Lobby01_Splash_Fragment;
 import Lobby_Frgment.Lobby02_Guide_Fragment;
 import Lobby_Frgment.Lobby03_Login_Fragment;
+import Lobby_Frgment.Lobby04_Join_Fragment;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
@@ -28,13 +30,16 @@ public class LobbyActivity extends BaseActivity implements View.OnClickListener 
     public Lobby01_Splash_Fragment splash_fragment;
     public Lobby02_Guide_Fragment guide_fragment;
     public Lobby03_Login_Fragment login_fragment;
+    public Lobby04_Join_Fragment join_fragment;
     Guide_Adapter guide_adapter;
     ImageView[] iv = new ImageView[4];
-    @BindView(R.id.main_fragment) RelativeLayout main_fragment;
+
+    @BindView(R.id.lobby_fragment) FrameLayout main_fragment;
+    @BindView(R.id.guide_widget) RelativeLayout guide_widget;
     @BindView(R.id.guide_viewpager) ViewPager guide;
     @BindView(R.id.guide_not_show) Button not_show;
     @BindView(R.id.guide_ok) Button ok;
-    @BindView(R.id.guide_widget) RelativeLayout guide_widget;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -46,7 +51,7 @@ public class LobbyActivity extends BaseActivity implements View.OnClickListener 
             iv[i] = findViewById(R.id.process1+i);
         }
         set_Fragment();
-        change_fragment(R.id.main_fragment,splash_fragment);
+        change_fragment(R.id.lobby_fragment,splash_fragment);
         timer();
         guide.addOnPageChangeListener(new ViewPager.OnPageChangeListener() {
             @Override
@@ -70,6 +75,7 @@ public class LobbyActivity extends BaseActivity implements View.OnClickListener 
         splash_fragment = new Lobby01_Splash_Fragment();
         guide_fragment = new Lobby02_Guide_Fragment();
         login_fragment = new Lobby03_Login_Fragment();
+        join_fragment = new Lobby04_Join_Fragment();
     }
 
     private void timer(){
@@ -87,11 +93,13 @@ public class LobbyActivity extends BaseActivity implements View.OnClickListener 
             }
         }).start();
     }
+
     private void change_guide(){
-        guide_adapter = new Guide_Adapter(fm);
+        guide_adapter = new Guide_Adapter(getSupportFragmentManager());
         guide.setAdapter(guide_adapter);
         guide_widget.setVisibility(View.VISIBLE);
         main_fragment.setVisibility(View.INVISIBLE);
+        change_fragment(R.id.lobby_fragment,login_fragment);
         setMark(0);
     }
 
@@ -124,10 +132,11 @@ public class LobbyActivity extends BaseActivity implements View.OnClickListener 
                 // 다음번에 어플 시작할때 보여줌
                 break;
         }
-
-        guide_widget.setVisibility(View.INVISIBLE);
+        /*
+            AlertDialog로 ViewPager 표현이 가능한지 알아보고 구현해보기
+         */
+        guide.setVisibility(View.INVISIBLE);
         main_fragment.setVisibility(View.VISIBLE);
-        change_fragment(R.id.main_fragment,login_fragment);
-        get_log("guide: "+guide_widget.getVisibility());
+        guide_widget.setVisibility(View.INVISIBLE);
     }
 }

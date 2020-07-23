@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="domain_name">
+        <item>도메인 입력</item>
+        <item>＠naver.com</item>
+        <item>＠google.com</item>
+        <item>＠daum.net</item>
+        <item>＠직접입력</item>
+    </string-array>
+
+    <string-array name="book_list">
+        <item>말그릇</item>
+        <item>잘못은 우리 별에 있어</item>
+        <item>이수정 이다혜의 범죄영화 프로파일</item>
+        <item>아몬드</item>
+
+    </string-array>
+</resources>

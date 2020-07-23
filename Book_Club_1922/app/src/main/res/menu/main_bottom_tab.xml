@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/postItem"
+        android:title="Post"
+        android:icon="@drawable/ic_baseline_library_books_60"
+        />
+    <item
+        android:id="@+id/createItem"
+        android:title="Create"
+        android:icon="@drawable/ic_baseline_create_60"
+        />
+    <item
+        android:id="@+id/msgItem"
+        android:title="Msg"
+        android:icon="@drawable/ic_baseline_notifications_60"
+        />
+    <item
+        android:id="@+id/infoItem"
+        android:title="Custom"
+        android:icon="@drawable/ic_baseline_account_circle_60"
+        />
+
+</menu>

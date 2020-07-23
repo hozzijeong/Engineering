@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_marginLeft="30dp"
+    android:layout_marginRight="30dp">
+
+    <ImageView
+        android:id="@+id/post_profile"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_baseline_account_circle_75"
+        />
+    <TextView
+        android:id="@+id/post_writer"
+        android:layout_width="wrap_content"
+        android:layout_height="40dp"
+        android:textSize="25sp"
+        android:layout_toRightOf="@id/post_profile"
+        android:textStyle="bold"
+        android:text="작성자"
+        android:gravity="center_vertical"
+        />
+    <TextView
+        android:id="@+id/book_title"
+        android:layout_width="120dp"
+        android:layout_height="35dp"
+        android:layout_below="@id/post_writer"
+        android:layout_alignStart="@id/post_writer"
+        android:layout_alignBottom="@id/post_profile"
+        android:text="책 제목"
+        android:textSize="20sp"
+        android:gravity="bottom"
+        />
+    <TextView
+        android:id="@+id/write_date"
+        android:layout_width="110dp"
+        android:layout_height="35dp"
+        android:layout_alignBottom="@id/book_title"
+        android:layout_toRightOf="@id/book_title"
+        android:textSize="20sp"
+        android:text="2020.07.23"
+        android:gravity="bottom"
+        />
+    <ImageButton
+        android:id="@+id/ud_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_baseline_more_vert_24"
+        android:background="#00ffffff"
+        android:layout_alignParentEnd="true"
+        android:layout_alignBottom="@id/write_date"
+        />
+    <androidx.cardview.widget.CardView
+        android:id="@+id/post_cardview"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:elevation="100dp"
+        app:cardBackgroundColor="#19673AB7"
+        app:cardCornerRadius="8dp"
+        android:layout_marginTop="20dp"
+        android:layout_below="@id/post_profile"
+        >
+        <TextView
+            android:id="@+id/post_content"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="가나다라마바사아자차카타파하"
+            android:textSize="20sp"
+            />
+    </androidx.cardview.widget.CardView>
+
+
+</RelativeLayout>

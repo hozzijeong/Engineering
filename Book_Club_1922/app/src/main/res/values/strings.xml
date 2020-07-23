@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">Book_Club_1922</string>
+    <string name = "myAppName">"Book_Club:1922"</string>
 </resources>

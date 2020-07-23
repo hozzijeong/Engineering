@@ -1,0 +1,248 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    >
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:layout_margin="20dp">
+        <RelativeLayout
+            android:id="@+id/id_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            >
+            <TextView
+                android:id="@+id/join_id_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="아이디"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                />
+            <EditText
+                android:id="@+id/join_id_et"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_below="@id/join_id_tv"
+                android:layout_toLeftOf="@id/join_id_ck"
+                android:hint="아이디 입력"
+                />
+            <Button
+                android:id="@+id/join_id_ck"
+                android:layout_width="100dp"
+                android:layout_height="50dp"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentBottom="true"
+                android:text="아이디 확인"
+                />
+        </RelativeLayout>
+        <RelativeLayout
+            android:id="@+id/pw_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            >
+            <TextView
+                android:id="@+id/join_pw_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="비밀번호"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                />
+            <EditText
+                android:id="@+id/join_pw_et"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_below="@id/join_pw_tv"
+                android:hint="비밀번호 입력"
+                android:layout_marginBottom="10dp"
+                />
+            <TextView
+                android:id="@+id/join_re_pw_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/join_pw_et"
+                android:text="비밀번호 재입력"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                />
+            <EditText
+                android:id="@+id/join_re_pw_et"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_below="@id/join_re_pw_tv"
+                android:hint="비밀번호 재입력"
+                />
+        </RelativeLayout>
+        <RelativeLayout
+            android:id="@+id/name_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            >
+            <TextView
+                android:id="@+id/join_name_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="이름"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                />
+            <EditText
+                android:id="@+id/join_name_et"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_below="@id/join_name_tv"
+                android:hint="이름 입력"
+                />
+
+        </RelativeLayout>
+        <RelativeLayout
+            android:id="@+id/mail_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            >
+            <TextView
+                android:id="@+id/join_mail_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="E-Mail"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                />
+            <EditText
+                android:id="@+id/join_mail_et"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_below="@id/join_mail_tv"
+                android:hint="E-Mail 입력"
+                android:layout_marginBottom="10dp"
+                android:layout_toLeftOf="@id/join_domain"
+
+                />
+            <EditText
+                android:id="@+id/join_domain_write"
+                android:layout_width="150dp"
+                android:layout_height="50dp"
+                android:layout_toLeftOf="@id/mail_send"
+                android:layout_alignBottom="@id/join_mail_et"
+                android:visibility="invisible"
+                />
+            <Spinner
+                android:id="@+id/join_domain"
+                android:layout_width="150dp"
+                android:layout_height="50dp"
+                android:entries="@array/domain_name"
+                android:layout_toLeftOf="@id/mail_send"
+                android:layout_alignBottom="@id/join_mail_et"
+                />
+            <Button
+                android:id="@+id/mail_send"
+                android:layout_width="100dp"
+                android:layout_height="50dp"
+                android:layout_alignBottom="@id/join_mail_et"
+                android:layout_alignParentEnd="true"
+                android:text="인증 번호 전송"
+                android:textSize="11sp"
+                />
+
+            <EditText
+                android:id="@+id/join_config_mail_et"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_below="@id/join_mail_et"
+                android:hint="인증번호 입력"
+                android:layout_alignRight="@id/join_domain"
+                />
+            <Button
+                android:id="@+id/mail_check"
+                android:layout_width="100dp"
+                android:layout_height="50dp"
+                android:layout_alignBottom="@id/join_config_mail_et"
+                android:layout_alignParentEnd="true"
+                android:layout_toRightOf="@id/join_config_mail_et"
+                android:text="인증 번호 확인"
+                android:textSize="11sp"
+                />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/phone_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            >
+            <TextView
+                android:id="@+id/join_phone_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="휴대 전화"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                />
+            <EditText
+                android:id="@+id/join_phone_et"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_below="@id/join_phone_tv"
+                android:hint="전화번호 입력"
+                android:layout_marginBottom="10dp"
+                android:layout_toLeftOf="@id/phone_send"
+                />
+
+            <Button
+                android:id="@+id/phone_send"
+                android:layout_width="100dp"
+                android:layout_height="50dp"
+                android:layout_alignBottom="@id/join_phone_et"
+                android:layout_alignParentEnd="true"
+                android:text="인증 번호 전송"
+                android:textSize="11sp"
+                />
+
+            <EditText
+                android:id="@+id/join_config_phone_et"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_below="@id/join_phone_et"
+                android:hint="인증번호 입력"
+                android:layout_toLeftOf="@id/phone_check"
+                />
+            <Button
+                android:id="@+id/phone_check"
+                android:layout_width="100dp"
+                android:layout_height="50dp"
+                android:layout_alignBottom="@id/join_config_phone_et"
+                android:layout_alignParentEnd="true"
+                android:text="인증 번호 확인"
+                android:textSize="11sp"
+                />
+        </RelativeLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:orientation="horizontal"
+            android:weightSum="2"
+            >
+            <Button
+                android:id="@+id/join_quite_btn"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:text="뒤로가기"
+                />
+            <Button
+                android:id="@+id/join_join_btn"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:text="가입 하기"
+                />
+        </LinearLayout>
+    </LinearLayout>
+</ScrollView>
