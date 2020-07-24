@@ -56,5 +56,10 @@ public class BaseActivity extends AppCompatActivity {
         ft.commit();
     }
 
+    public void quite_fragment(Fragment fragment){
+        ft = fm.beginTransaction();
+        ft.remove(fragment).commit();
+    }
+
 
 }

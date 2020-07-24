@@ -6,4 +6,12 @@
         android:id="@+id/alert_list"
         android:layout_height="match_parent"
         android:layout_width="match_parent" />
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:text="CREATE_FRAGMENT"
+        android:textSize="30sp"
+        android:gravity="center"
+        />
 </RelativeLayout>

@@ -1,14 +1,81 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
-    <TextView
-        android:id="@+id/logo"
-        android:layout_width="wrap_content"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <RelativeLayout
+        android:id="@+id/info_layout"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_centerInParent="true"
-        android:textSize="40sp"
-        android:text="myinfo"
-        android:textStyle="bold"
-        />
+        android:layout_margin="20dp">
+        <ImageView
+            android:id="@+id/user_profile"
+            android:layout_width="120dp"
+            android:layout_height="120dp"
+            android:src="@drawable/ic_baseline_account_circle_75"
+            android:layout_centerVertical="true"
+            />
+        <TextView
+            android:id="@+id/info_name"
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:layout_toRightOf="@id/user_profile"
+            android:textSize="20sp"
+            android:text="my Name"
+            android:textStyle="bold"
+            android:gravity="center_vertical"
+            />
+        <TextView
+            android:id="@+id/info_book_nums"
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:layout_toRightOf="@id/user_profile"
+            android:layout_below="@id/info_name"
+            android:text="num of books"
+            android:textSize="20sp"
+            android:gravity="center_vertical"
+
+            />
+        <TextView
+            android:id="@+id/info_group"
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:layout_toRightOf="@id/user_profile"
+            android:layout_below="@id/info_book_nums"
+            android:text="group name"
+            android:gravity="center_vertical"
+            android:textSize="20sp"
+            />
+    </RelativeLayout>
+
+    <androidx.viewpager.widget.ViewPager
+        android:id="@+id/custom_pager"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/info_layout"
+        >
+        <com.google.android.material.tabs.TabLayout
+            android:id="@+id/tab_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:tabGravity="fill"
+            app:tabIndicatorGravity="top"
+            >
+            <com.google.android.material.tabs.TabItem
+                android:text="book_list"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:icon="@drawable/ic_baseline_menu_book_24"
+                />
+            <com.google.android.material.tabs.TabItem
+                android:text="post_list"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:icon="@drawable/ic_baseline_filter_none_24"/>
+
+        </com.google.android.material.tabs.TabLayout>
+    </androidx.viewpager.widget.ViewPager>
+
+
 </RelativeLayout>

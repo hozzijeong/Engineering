@@ -116,9 +116,6 @@ public class Main02_Create_Fragment extends BaseFragment_Main implements View.On
     private void setQuite(){
         main.bt_navi.setVisibility(View.VISIBLE);
         main.top_bar.setVisibility(View.VISIBLE);
-        /*
-            여기서 navigation 이 가리키는 값이 post가 되도록 설정
-         */
         main.change_fragment(R.id.main_layout,main.post_fragment);
         main.quite_fragment(this);
     }

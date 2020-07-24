@@ -7,6 +7,7 @@ import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.ImageButton;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -35,7 +36,7 @@ public class Main01_Post_Adapter extends ArrayAdapter {
     @Override
     public int getCount() {
         //Item의 사이즈를 반환시켜 주는 메소드.
-        return arrayList.size();
+        return (arrayList==null)?0:arrayList.size();
     }
 
     @Override
@@ -64,24 +65,35 @@ public class Main01_Post_Adapter extends ArrayAdapter {
         TextView title_tv = convertView.findViewById(R.id.book_title);
         TextView  content = convertView.findViewById(R.id.post_content);
         CardView cardView = convertView.findViewById(R.id.post_cardview);
-
+        LinearLayout subject_layout = convertView.findViewById(R.id.subject_layout);
         ImageButton modify_btn = convertView.findViewById(R.id.ud_btn);
         ImageView profile_iv = convertView.findViewById(R.id.post_profile);
 
-        name_tv.setText(arrayList.get(position).getName());
-        date_tv.setText(arrayList.get(position).getDate());
-        title_tv.setText(arrayList.get(position).getTitle());
-        content.setText(arrayList.get(position).getContent());
+        name_tv.setText(curItem.getName());
+        date_tv.setText(curItem.getDate());
+        title_tv.setText(curItem.getTitle());
+        content.setText(curItem.getContent());
 
-        profile_iv.setImageResource(arrayList.get(position).getProfile_res());
+        profile_iv.setImageResource(curItem.getProfile_res());
+
+        // 추가되는 주제들 동적 추가.
+        for(int i=0; i<curItem.subjects.size(); i++){
+            TextView sub = new TextView(context);
+            sub.setText((i+1)+"."+curItem.subjects.get(i));
+            sub.setTextSize(15);
+            subject_layout.addView(sub);
+        }
 
 
         modify_btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                
+
             }
         });
+
+
+
 
         return convertView;
     }

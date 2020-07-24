@@ -12,12 +12,12 @@ import com.example.book_club_1922.R;
 
 import AppHelper.BaseFragment_Main;
 
-public class Main03_Myinfo_Fragment extends BaseFragment_Main {
+public class Main03_Alert_Fragment extends BaseFragment_Main {
 
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        View v  = inflater.inflate(R.layout.main03_myinfo_fragment,container,false);
+        View v  = inflater.inflate(R.layout.main03_alert_fragment,container,false);
 
         return v;
     }

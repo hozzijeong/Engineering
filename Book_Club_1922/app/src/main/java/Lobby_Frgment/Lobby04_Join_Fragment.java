@@ -49,7 +49,6 @@ public class Lobby04_Join_Fragment extends BaseFragment_Lobby implements View.On
                     }
                 }
             }
-
             @Override
             public void onNothingSelected(AdapterView<?> parent) {
 
