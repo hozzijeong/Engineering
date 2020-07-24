@@ -114,6 +114,7 @@ public class Main02_Create_Fragment extends BaseFragment_Main implements View.On
     }
 
     private void setQuite(){
+        main.main_layout.setVisibility(View.VISIBLE);
         main.bt_navi.setVisibility(View.VISIBLE);
         main.top_bar.setVisibility(View.VISIBLE);
         main.change_fragment(R.id.main_layout,main.post_fragment);

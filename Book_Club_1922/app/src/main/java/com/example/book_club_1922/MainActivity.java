@@ -78,7 +78,6 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
                     case R.id.infoItem:
                         top_bar.setVisibility(View.INVISIBLE);
                         change_fragment(R.id.main_layout,myinfo_fragment);
-
                         return true;
                     case R.id.menuItem:
                         setLv();
@@ -116,6 +115,7 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
         switch (v.getId()){
             case R.id.create_btn:
                 create_layout.setVisibility(View.VISIBLE);
+                main_layout.setVisibility(View.INVISIBLE);
                 top_bar.setVisibility(View.INVISIBLE);
                 bt_navi.setVisibility(View.INVISIBLE);
                 change_fragment(R.id.create_layout,create_fragment);
