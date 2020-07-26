@@ -8,14 +8,11 @@ import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Spinner;
-import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 
-import com.example.book_club_1922.R;
-
-import java.util.ArrayList;
+import com.illguee.book_club_1922.R;
 
 import AppHelper.BaseFragment_Lobby;
 import butterknife.BindView;
@@ -28,6 +25,7 @@ public class Lobby04_Join_Fragment extends BaseFragment_Lobby implements View.On
     @BindView(R.id.join_mail_et) EditText mail;
     @BindView(R.id.join_domain_write) EditText domain_myself;
     String self_domain;
+    String my_email;
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
@@ -63,7 +61,7 @@ public class Lobby04_Join_Fragment extends BaseFragment_Lobby implements View.On
         switch(v.getId()){
 
             case R.id.join_join_btn:
-
+                my_email = mail+self_domain;
                 break;
 
             case R.id.join_quite_btn:

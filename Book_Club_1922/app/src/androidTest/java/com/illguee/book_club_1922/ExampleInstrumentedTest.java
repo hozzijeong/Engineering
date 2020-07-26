@@ -1,4 +1,4 @@
-package com.example.book_club_1922;
+package com.illguee.book_club_1922;
 
 import android.content.Context;
 

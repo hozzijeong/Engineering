@@ -1,6 +1,5 @@
 package Lobby_Frgment;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -12,8 +11,8 @@ import android.widget.EditText;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 
-import com.example.book_club_1922.MainActivity;
-import com.example.book_club_1922.R;
+import com.illguee.book_club_1922.MainActivity;
+import com.illguee.book_club_1922.R;
 
 import AppHelper.BaseFragment_Lobby;
 import butterknife.BindView;
@@ -35,6 +34,12 @@ public class Lobby03_Login_Fragment extends BaseFragment_Lobby implements View.O
         login.setOnClickListener(this);
         join.setOnClickListener(this);
 
+        auto.setChecked(lobby.load_boolean_preference("1922","auto_login"));
+
+        if(auto.isChecked()){
+            lobby.move_intent(lobby,MainActivity.class);
+        }
+
         return v;
     }
 
@@ -42,13 +47,12 @@ public class Lobby03_Login_Fragment extends BaseFragment_Lobby implements View.O
     public void onClick(View v) {
         switch (v.getId()){
             case R.id.login_login_btn:
-                Intent intent = new Intent(lobby, MainActivity.class);
-                startActivity(intent);
+                lobby.save_boolean_preference("1922","auto_login",auto.isChecked());
+                lobby.move_intent(lobby,MainActivity.class);
                 break;
             case R.id.login_join_btn:
                 lobby.change_fragment(R.id.lobby_fragment,lobby.join_fragment);
                 break;
-
         }
     }
 }

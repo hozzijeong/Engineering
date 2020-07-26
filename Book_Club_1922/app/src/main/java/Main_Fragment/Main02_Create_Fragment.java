@@ -9,19 +9,16 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.LinearLayout;
-import android.widget.ListView;
 import android.widget.Spinner;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 
-import com.example.book_club_1922.R;
+import com.illguee.book_club_1922.R;
 
 import java.util.ArrayList;
 
 import AppHelper.BaseFragment_Main;
-import Main_Adapter.Main01_Post_Adapter;
-import Main_Item.Main01_Post_Item;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 

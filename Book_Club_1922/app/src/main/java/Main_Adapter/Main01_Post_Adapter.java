@@ -10,12 +10,9 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
-import androidx.annotation.NonNull;
 import androidx.cardview.widget.CardView;
 
-import com.example.book_club_1922.R;
-
-import org.w3c.dom.Text;
+import com.illguee.book_club_1922.R;
 
 import java.util.ArrayList;
 

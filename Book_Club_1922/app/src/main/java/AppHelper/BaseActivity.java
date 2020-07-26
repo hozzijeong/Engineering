@@ -32,21 +32,22 @@ public class BaseActivity extends AppCompatActivity {
         Log.d("mood",data);
     }
 
-    protected void move_intent(Context context,Class cls){
+    public void move_intent(Context context,Class cls){
         Intent intent = new Intent(context,cls);
         startActivity(intent);
     }
 
-    protected void save_preference(String place,String key,String value){
+    public void save_boolean_preference(String place,String key,boolean data){
         SharedPreferences sp = getSharedPreferences(place,MODE_PRIVATE);
-        SharedPreferences.Editor editor = sp.edit();
-        editor.putString(key,value);
+        SharedPreferences.Editor editor;
+        editor = sp.edit();
+        editor.putBoolean(key,data);
         editor.commit();
     }
 
-    protected String load_preference(String place,String key){
+    public Boolean load_boolean_preference(String place,String key){
         SharedPreferences sp = getSharedPreferences(place,MODE_PRIVATE);
-        return sp.getString(key,null);
+        return sp.getBoolean(key,false);
     }
 
     public void change_fragment(int resource, Fragment fragment){

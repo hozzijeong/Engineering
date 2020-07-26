@@ -1,4 +1,4 @@
-package com.example.book_club_1922;
+package com.illguee.book_club_1922;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.widget.Toolbar;
@@ -6,15 +6,13 @@ import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
 
 import android.os.Bundle;
-import android.view.Gravity;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.FrameLayout;
 import android.widget.ImageButton;
-import android.widget.ListAdapter;
 import android.widget.ListView;
-import android.widget.Spinner;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
@@ -29,16 +27,12 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
         /*
            Main Fragment 구현 해야한다.
-
            Feed,Create,Custom,Alert 순으로 구현한다.
            Create는 위에서 아래로 올라온느형식 또는 클릭 하면, 따로 화면이 나오는 형식으로 해서 추가되는 방식
            즉, Fragment 사용이 아니라 새로운 위젯 창이 나타나야 한다는 의미
-
-           create를 클릭했을때, 새 창이 뜨는 것처러 하고 싶은데, 그게 왜 안될까?
-           bottomNavigtion때문에?
-
         */
-public class MainActivity extends BaseActivity implements View.OnClickListener {
+public class MainActivity extends BaseActivity implements View.OnClickListener,
+                BottomNavigationView.OnNavigationItemSelectedListener {
 
     public Main01_Post_Fragment post_fragment;
     public Main02_Create_Fragment create_fragment;
@@ -49,42 +43,34 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
     public @BindView(R.id.create_layout) FrameLayout create_layout;
     public @BindView(R.id.top_bar) Toolbar top_bar;
     @BindView(R.id.create_btn) ImageButton create_btn;
-    @BindView(R.id.book_list) Spinner book_list;
+    @BindView(R.id.select_book) Button select_book;
     @BindView(R.id.drawer) DrawerLayout drawer;
     @BindView(R.id.menu_lv) ListView menu_lv;
+
+    ArrayList<String> bookList = new ArrayList<>();
+
+    /*
+        drawer를 열고 닫았을때 bottomnavigation의 위치값을 설정하기 위한 변수들
+     */
+    int before_id = 0;
+    int cur_id = 0;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         ButterKnife.bind(this);
+        cur_id = R.id.postItem;
         drawer.setDrawerLockMode(DrawerLayout.LOCK_MODE_LOCKED_CLOSED);
         set_Fragment();
-//        top_bar.setTitle(R.string.myAppName);
-//        setSupportActionBar(top_bar);
         create_btn.setOnClickListener(this);
+        bt_navi.setOnNavigationItemSelectedListener(this);
         change_fragment(R.id.main_layout,post_fragment);
-        bt_navi.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
+        drawer.setDrawerListener(new DrawerLayout.SimpleDrawerListener() {
             @Override
-            public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
-                switch(menuItem.getItemId()){
-                    case R.id.postItem:
-                        top_bar.setVisibility(View.VISIBLE);
-                        change_fragment(R.id.main_layout,post_fragment);
-                        return true;
-                    case R.id.msgItem:
-                        top_bar.setVisibility(View.INVISIBLE);
-                        change_fragment(R.id.main_layout,alert_fragment);
-                        return true;
-                    case R.id.infoItem:
-                        top_bar.setVisibility(View.INVISIBLE);
-                        change_fragment(R.id.main_layout,myinfo_fragment);
-                        return true;
-                    case R.id.menuItem:
-                        setLv();
-                        drawer.openDrawer(GravityCompat.END);
-                        return true;
-                    default:return false;
-                }
+            public void onDrawerOpened(View drawerView) {
+                super.onDrawerOpened(drawerView);
+                bt_navi.setSelectedItemId(before_id);
             }
         });
     }
@@ -120,6 +106,31 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
                 bt_navi.setVisibility(View.INVISIBLE);
                 change_fragment(R.id.create_layout,create_fragment);
                 break;
+        }
+    }
+
+    @Override
+    public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
+        before_id = cur_id;
+        cur_id = menuItem.getItemId();
+        switch(menuItem.getItemId()){
+            case R.id.postItem:
+                top_bar.setVisibility(View.VISIBLE);
+                change_fragment(R.id.main_layout,post_fragment);
+                return true;
+            case R.id.msgItem:
+                top_bar.setVisibility(View.INVISIBLE);
+                change_fragment(R.id.main_layout,alert_fragment);
+                return true;
+            case R.id.infoItem:
+                top_bar.setVisibility(View.INVISIBLE);
+                change_fragment(R.id.main_layout,myinfo_fragment);
+                return true;
+            case R.id.menuItem:
+                setLv();
+                drawer.openDrawer(GravityCompat.END);
+                return true;
+            default:return false;
         }
     }
 }

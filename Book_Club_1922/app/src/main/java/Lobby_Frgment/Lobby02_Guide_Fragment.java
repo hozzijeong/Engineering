@@ -4,14 +4,13 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 
 
-import com.example.book_club_1922.R;
+import com.illguee.book_club_1922.R;
 
 import AppHelper.BaseFragment_Lobby;
 import butterknife.BindView;

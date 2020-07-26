@@ -8,7 +8,7 @@ import android.view.ViewGroup;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 
-import com.example.book_club_1922.R;
+import com.illguee.book_club_1922.R;
 
 import AppHelper.BaseFragment_Lobby;
 

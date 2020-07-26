@@ -15,24 +15,35 @@
        <androidx.appcompat.widget.Toolbar
            android:id="@+id/top_bar"
            android:layout_width="match_parent"
-           android:layout_height="wrap_content"
-           android:background="#80719A"
+           android:layout_height="60dp"
+           android:background="#9369DC"
         >
-           <Spinner
-               android:id="@+id/book_list"
-               android:layout_width="200dp"
+           <RelativeLayout
+               android:layout_width="match_parent"
                android:layout_height="match_parent"
-               android:gravity="center_horizontal"
-               android:entries="@array/book_list"
-               android:background="#ffffff"
-               />
-           <ImageButton
-               android:id="@+id/create_btn"
-               android:layout_width="wrap_content"
-               android:layout_height="match_parent"
-               android:src="@drawable/ic_baseline_create_60"
-               android:background="#00ffffff"
-               />
+               >
+               <Button
+                   android:id="@+id/select_book"
+                   android:layout_width="wrap_content"
+                   android:layout_height="wrap_content"
+                   android:layout_centerInParent="true"
+                   android:background="#9C27B0"
+                   android:text="전체 보기"
+                   android:textColor="#ffffff"
+                   android:textStyle="bold"
+                   />
+               <ImageButton
+                   android:id="@+id/create_btn"
+                   android:layout_width="wrap_content"
+                   android:layout_height="match_parent"
+                   android:src="@drawable/ic_baseline_create_60"
+                   android:background="#00ffffff"
+                   android:layout_alignParentEnd="true"
+                   android:layout_marginRight="20dp"
+                   />
+
+           </RelativeLayout>
+
        </androidx.appcompat.widget.Toolbar>
 
         <FrameLayout
@@ -50,7 +61,7 @@
             android:layout_marginStart="0dp"
             android:layout_marginEnd="0dp"
             android:layout_alignParentBottom="true"
-            android:background="#80719A"
+            android:background="#9369DC"
             app:menu="@menu/main_bottom_tab"
             />
         <FrameLayout
